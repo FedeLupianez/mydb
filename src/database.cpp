@@ -1,4 +1,4 @@
-#include "database.h"
+#include "../include/database.h"
 #include <utility>
 
 void Database::add_table(std::string name, std::vector<std::pair<std::string, std::string>> data) {

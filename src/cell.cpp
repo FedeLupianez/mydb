@@ -1,4 +1,4 @@
-#include "cell.h"
+#include "../include/cell.h"
 
 void Cell::clear() {
     if (type == Type::STRING) {

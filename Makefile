@@ -1,6 +1,6 @@
 compile:
 	@echo "Compiling..."
-	@g++ cell.cpp register.cpp table.cpp database.cpp main.cpp -o main
+	@g++ src/cell.cpp src/register.cpp src/table.cpp src/database.cpp src/main.cpp -o main
 	@echo "Done"
 
 run:

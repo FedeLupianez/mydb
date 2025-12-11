@@ -1,4 +1,4 @@
-#include "register.h"
+#include "../include/register.h"
 
 Register::Register(std::vector<Cell> new_cells, int new_id) {
     cells = new_cells;

@@ -1,4 +1,4 @@
-#include "table.h"
+#include "../include/table.h"
 
 void Table::add_header(std::pair<std::string, std::string> header) {
     headers.push_back(header);

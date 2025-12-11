@@ -1,8 +1,8 @@
-#include "colors.h"
-#include "database.h"
-#include "text_parser.h"
+#include "../include/colors.h"
+#include "../include/database.h"
+#include "../include/text_parser.h"
 
-#include "commands.h"
+#include "../include/commands.h"
 #include <iostream>
 #include <stdexcept>
 #include <string>
