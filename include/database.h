@@ -1,4 +1,5 @@
 #include "colors.h"
+#include "datafile_manager.h"
 #include "table.h"
 #include <memory>
 #include <unordered_map>
@@ -11,6 +12,7 @@ class Database {
     int database_id = 0;
     int new_table_id = 0;
     std::unordered_map<std::string, std::unique_ptr<Table>> tables;
+    DatafileManager dfm = DatafileManager("database.db");
 
   public:
     Database(int new_id) {

@@ -43,4 +43,5 @@ void Database::insert(std::string table_name, std::vector<std::string> &columns,
     }
     Table *table = result->second.get();
     table->create_register(columns, values);
+    dfm.save(*table);
 }
