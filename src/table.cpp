@@ -57,7 +57,7 @@ std::vector<Register> Table::view_cols(std::vector<std::string> &columns) {
     return selected_registers;
 }
 
-void Table::create_register(std::vector<std::string> &columns, std::vector<std::string> &values) {
+Register &Table::create_register(std::vector<std::string> &columns, std::vector<std::string> &values) {
     Register new_register;
     for (int i = 0; i < columns.size(); i++) {
         Cell new_cell;
@@ -76,4 +76,5 @@ void Table::create_register(std::vector<std::string> &columns, std::vector<std::
         new_register.add_cell(new_cell);
     }
     this->add_register(new_register);
+    return this->registers[this->registers.size() - 1];
 }

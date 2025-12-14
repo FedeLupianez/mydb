@@ -16,14 +16,17 @@ struct Page {
 class DatafileManager {
   private:
     std::fstream file;
-    size_t actual_page = 2;
+    size_t tables_page = 1;
+    size_t actual_page = 3;
     size_t actual_size = 0;
 
   public:
     DatafileManager(std::string path);
 
+    size_t get_writed_size(size_t page_id);
     bool read_page(size_t page_id, Page &page);
-    bool write_page(size_t page_id, Page &page);
+    bool write_page(size_t page_id, Page &page, size_t size);
+
     size_t new_page();
 
     void save(Table &table);

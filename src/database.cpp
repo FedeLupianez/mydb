@@ -1,4 +1,5 @@
 #include "../include/database.h"
+#include <memory>
 #include <utility>
 
 void Database::add_table(std::string name, std::vector<std::pair<std::string, std::string>> data) {
@@ -15,6 +16,7 @@ void Database::add_table(std::string name, std::vector<std::pair<std::string, st
         std::pair<std::string, std::string> header = new_table.get_header(i);
         std::cout << yellow(header.first) << " type: " << blue(header.second) << std::endl;
     }
+    this->dfm.save(new_table);
 }
 
 void Database::remove_table(std::string table_name) {
@@ -42,6 +44,6 @@ void Database::insert(std::string table_name, std::vector<std::string> &columns,
         return;
     }
     Table *table = result->second.get();
-    table->create_register(columns, values);
-    dfm.save(*table);
+    std::unique_ptr<Register> temp_register = std::make_unique<Register>(table->create_register(columns, values));
+    this->dfm.save(*temp_register);
 }

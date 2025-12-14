@@ -23,6 +23,10 @@ class Register {
         this->register_id = new_id;
     }
 
+    std::vector<Cell> get_cells() {
+        return cells;
+    }
+
     void remove_cell(int index);
     Cell &operator[](int index);
     void print();
